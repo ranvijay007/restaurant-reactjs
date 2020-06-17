@@ -36,7 +36,13 @@ class CommentForm extends Component {
 
   handleSubmit(values) {
     this.toggleModal();
-    alert("Current State is: " + JSON.stringify(values));
+    this.props.addComment(
+      this.props.dishId,
+      values.rating,
+      values.author,
+      values.comment
+    );
+    //alert("Current State is: " + JSON.stringify(values));
     //event.preventDefault();
   }
 
@@ -70,7 +76,6 @@ class CommentForm extends Component {
                     <option>3</option>
                     <option>4</option>
                     <option>5</option>
-                    
                   </Control.select>
                 </Col>
               </Row>
@@ -147,11 +152,11 @@ function RenderDish(dish) {
   else return <div></div>;
 }
 
-function RenderComments(comments) {
+function RenderComments({ comments, addComment, dishId }) {
   return (
     <div>
       <h4>Comments</h4>
-      {comments.comments.map((comment) => (
+      {comments.map((comment) => (
         <ul key={comment.id} className="list-unstyled">
           <li className="mb-3">{comment.comment}</li>
           <li>
@@ -165,7 +170,7 @@ function RenderComments(comments) {
         </ul>
       ))}
       <div>
-        <CommentForm />
+        <CommentForm dishId={dishId} addComment={addComment} />
       </div>
     </div>
   );
@@ -191,7 +196,11 @@ const DishDetail = (props) => {
           <RenderDish dish={props.dish} />
         </div>
         <div className="col-12 col-md-5 m-1">
-          <RenderComments comments={props.comments} />
+          <RenderComments
+            comments={props.comments}
+            addComment={props.addComment}
+            dishId={props.dish.id}
+          />
         </div>
       </div>
     </div>
