@@ -18,6 +18,7 @@ import {
 import { Link } from "react-router-dom";
 import { Control, LocalForm, Errors } from "react-redux-form";
 import { Loading } from "./LoadingComponent";
+import { baseUrl } from "../shared/baseUrl";
 
 class CommentForm extends Component {
   constructor(props) {
@@ -139,14 +140,15 @@ class CommentForm extends Component {
   }
 }
 
-function RenderDish(dish) {
+function RenderDish({ dish }) {
   if (dish != null) {
     return (
       <Card>
-        <CardImg top src={dish.dish.image} alt={dish.dish.name} />
+        <CardImg top src={baseUrl + dish.image} alt={dish.name} />
+        {console.log(baseUrl + dish.image)}
         <CardBody>
-          <CardTitle>{dish.dish.name}</CardTitle>
-          <CardText>{dish.dish.description}</CardText>
+          <CardTitle>{dish.name}</CardTitle>
+          <CardText>{dish.description}</CardText>
         </CardBody>
       </Card>
     );
