@@ -145,7 +145,7 @@ function RenderDish({ dish }) {
     return (
       <Card>
         <CardImg top src={baseUrl + dish.image} alt={dish.name} />
-        {console.log(baseUrl + dish.image)}
+
         <CardBody>
           <CardTitle>{dish.name}</CardTitle>
           <CardText>{dish.description}</CardText>
