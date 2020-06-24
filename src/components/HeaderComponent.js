@@ -59,7 +59,7 @@ class Header extends Component {
   render() {
     return (
       <div>
-        <Navbar dark expand="md">
+        <Navbar dark className="bg-primary" expand="md">
           <div className="container">
             <NavbarToggler onClick={this.toggleNav} />
             <NavbarBrand className="mr-auto" href="/">
@@ -96,7 +96,11 @@ class Header extends Component {
               </Nav>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <Button outline onClick={this.toggleModal}>
+                  <Button
+                    outline
+                    onClick={this.toggleModal}
+                    className="bg-warning"
+                  >
                     <span className="fa fa-sign-in fa-lg"></span> Login
                   </Button>
                 </NavItem>

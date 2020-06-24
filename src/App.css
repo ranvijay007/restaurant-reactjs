@@ -11,14 +11,18 @@
 }
 
 .footer {
-  background-color: #aa97cc;
+  background-color: #0d0d0e;
   margin: 0px auto;
   padding: 20px 0px 20px 0px;
+  color: rgb(235, 230, 230);
+}
+.address {
+  color: rgb(238, 232, 232);
 }
 .jumbotron {
   padding: 70px 30px 70px 30px;
   margin: 0px auto;
-  background: #9360eb;
+  background: #4abef3;
   color: rgb(31, 30, 28);
 }
 
@@ -52,4 +56,9 @@ address {
   opacity: 0.01;
   transform: translateX(100%);
   transition: all 300ms ease-out;
+}
+
+.container a {
+  text-decoration: none;
+  color: rgb(230, 222, 222);
 }
