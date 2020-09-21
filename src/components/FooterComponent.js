@@ -34,7 +34,7 @@ function Footer(props) {
               <br />
               <i className="fa fa-phone fa-lg"></i>: +912 1234 5678
               <br />
-              <i className="fa fa-fax fa-lg"></i>: +912 8765 4321
+              <i className="fa fa-fax fa-lg"></i>: +912 8765 4265
               <br />
               <i className="fa fa-envelope fa-lg"></i>:{" "}
               <a href="mailto:confusion@food.net">delicious@food.net</a>
